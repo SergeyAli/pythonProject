@@ -15,7 +15,6 @@ for letter in text:
         dict_1[letter] += 1
 print(dict_1)
 
-
 dict_2 = {}
 for letter in set(text):
     dict_2[letter] = text.count(letter)
