@@ -12,3 +12,6 @@ data = {
 
 def task_salary(company: dict[str, list[int]]) -> bool:
     return all(map(lambda x: sum(x) > 0, company.values()))
+
+
+print(task_salary(data))
