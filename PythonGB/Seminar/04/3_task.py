@@ -13,3 +13,6 @@ def task_3(current_str: str) -> dict[str, int]:
     for item in range(my_begin, my_end):
         my_dict[chr(item)] = item
     return my_dict
+
+
+print(task_3('5 120'))
