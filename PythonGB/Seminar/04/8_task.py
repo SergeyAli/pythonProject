@@ -4,6 +4,22 @@
 # оканчивающихся на s (кроме переменной из одной буквы s) на None.
 # ✔ Значения не удаляются, а помещаются в одноимённые переменные без s на конце.
 
-# globals()
-#
-# def replace_globals():
+
+def replace_globals():
+    my_dict = globals()
+    print(globals())
+    add_dict = {}
+    for key, value in my_dict.items():
+        if (len(key) > 1) and (key[-1] == 's'):
+            add_dict[key[:-1]] = value
+            my_dict[key] = None
+
+    my_dict.update(add_dict)
+    print(my_dict)
+
+
+frins = 23
+erorrs = 'str'
+s = True
+
+replace_globals()
