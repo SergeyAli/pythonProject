@@ -8,6 +8,9 @@
 '''
 
 from random import randint
+
+__all__ = ['guess_game']
+
 def guess_game(start, stop, attempts):
     guess = randint(start, stop)
     for i in range(1, attempts + 1):

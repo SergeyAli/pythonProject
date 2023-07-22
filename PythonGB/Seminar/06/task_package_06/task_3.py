@@ -8,6 +8,9 @@
 
 from random import randint
 from sys import argv
+
+__all__ = ['guess_game']
+
 def guess_game(start=0, stop=10, attempts=5) -> bool:
     guess = randint(start, stop)
     for i in range(1, attempts + 1):

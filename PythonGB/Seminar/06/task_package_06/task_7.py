@@ -7,6 +7,8 @@
 Проверку года на високосность вынести в отдельную защищённую функцию.
 '''
 
+__all__ = ['task_date']
+
 def _check_leap_year(year):
     return not year % 4 != 0 or year % 100 != 0 or year % 400 != 0
 
@@ -28,6 +30,6 @@ def task_date(date: str):
 
 max_day = 0
 
-dmy = input('Input date im format DD.MM.YYYY: ')
+dmy = input('Введите дату в формате DD.MM.YYYY: ')
 
 print(task_date(dmy))

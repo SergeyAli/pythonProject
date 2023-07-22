@@ -7,6 +7,8 @@
 Зимой и летом одним цветом? ['ель', 'ёлка', 'сосна']
 '''
 
+__all__ = ['game_02']
+
 def game_02(riddle: str, answers: list, attempt=3) -> int:
     print(f'{riddle}\n')
     for i in range(1, attempt + 1):

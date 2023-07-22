@@ -8,6 +8,7 @@
 Для формирования результатов используйте генераторное выражение.
 '''
 
+__all__ = ['multy_game', 'add_dict_log', 'add_dict_log', 'print_result']
 
 from task_4 import game_02
 
