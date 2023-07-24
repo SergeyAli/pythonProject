@@ -7,11 +7,11 @@
 ✔ Количество файлов для каждого расширения различно.
 ✔ Внутри используйте вызов функции из прошлой задачи.
 '''
-from task_4 import create_file
+from task_4 import create_file_
 
 def create_dif_files (**kwargs):
     for ext, num in kwargs.items():
-        create_file(ext, count_file=num)
+        create_file_(ext, count_file=num)
 
 
 if __name__=='__main__':
