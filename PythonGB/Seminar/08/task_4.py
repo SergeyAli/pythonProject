@@ -8,24 +8,30 @@
 📌 Имя исходного и конечного файлов передавайте как аргументы функции.
 '''
 
-import json
 import csv
+import json
+from pathlib import Path
 
 
-def csv_to_json(csv_file, json_file):
-    with (open(csv_file, "r", encoding="UTF-8") as csv_f, open(json_file, "w", encoding="UTF-8", newline="") as json_f):
-        file = list(csv.reader(csv_f, dialect="excel"))
+def csv_to_json(file_out: Path, file_in: Path) -> None:
+    json_list = []
+    with open(file_out, 'r+', encoding='utf-8') as csv_file:
+        reader = csv.reader(csv_file)
+        for i, row in enumerate(reader):
+            if i == 0:
+                continue
+            json_dict = {}
+            level, user_id, name = row
+            json_dict['level'] = int(level)
+            json_dict['id'] = user_id.zfill(10)  # .zfill(10) заполняет строку нулями слева до указанной длины
+            json_dict['name'] = name.title()  # Метод title() возвращает строку с заглавной первой буквой
+            json_dict['hash'] = hash(
+                f'{user_id}{name}')  # Функция hash() возвращает хеш-значение объекта, если оно есть
+            json_list.append(json_dict)
 
-    lst = []
-    for i, line in enumerate(file):
-        if i == 0:
-            headers_id, headers_name, headers_access = file[0]
-        else:
-            level, user_id, name = line
-            lst.append({headers_id: user_id.zfill(10), headers_name: name.title, headers_access: level,
-                        'hash': hash(name + user_id)})
-            json.dump(lst, json_f, ensure_ascii=False, indent=2)
+    with open(file_in, 'w', encoding='utf-8') as f:
+        json.dump(json_list, f, indent=2, ensure_ascii=False)
 
 
 if __name__ == '__main__':
-    csv_to_json("file2.csv", "file2.json")
+    csv_to_json(Path('file2.csv'), Path('file2.json'))
