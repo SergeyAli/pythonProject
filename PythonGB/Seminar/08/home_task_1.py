@@ -75,3 +75,5 @@ def direct_info(direct: Path, name: str):
         pickle.dump(f'{pickle.dumps(json_data)}', f_pickle)
 
 
+if __name__ == '__main__':
+     direct_info(Path(r'C:\Users\Leon\PycharmProjects\pythonProject\PythonGB\Seminar\08'), 'name')
