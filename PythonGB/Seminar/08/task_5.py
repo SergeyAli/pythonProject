@@ -25,4 +25,4 @@ def json_to_pickle(file_in: Path, file_out: Path) -> None:
 
 
 if __name__ == '__main__':
-    json_to_pickle(Path('json_in.json'), Path('json_pickle.bin'))
+    json_to_pickle(Path('file2.json'), Path('json_pickle.bin'))
