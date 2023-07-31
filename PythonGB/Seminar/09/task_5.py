@@ -56,9 +56,10 @@ def repeat_func(repeats):
     return decorator
 
 
-@save_params
-@validate_values
 @repeat_func(3)
+@validate_values
+@save_params
+
 def guess_number(number):
     guess = random.randint(1, 10)
     if number == guess:
