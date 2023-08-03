@@ -23,6 +23,7 @@ class Fish(Animals):
     def __init__(self, name, depth):
         super().__init__(name)
         self.depth = depth
+
     def get_info(self):
         return f'Глубина обитания: {self.depth} m '
 
