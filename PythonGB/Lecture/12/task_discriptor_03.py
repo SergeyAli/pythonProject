@@ -42,11 +42,11 @@ class Student:
 
 if __name__ == '__main__':
     std_one = Student('Архимед', 12, 4, 29)
-    std_other = Student('Аристотель', 2406, 5, 17) # ValueError: Значение 2406 должно быть меньше 103
+    # std_other = Student('Аристотель', 2406, 5, 17) # ValueError: Значение 2406 должно быть меньше 103
     print(f'{std_one = }')
     std_one.age = 15
     print(f'{std_one = }')
-    std_one.grade = 11.0 # TypeError: Значение 11.0 должно быть целым числом
-    std_one.office = 73 # ValueError: Значение 73 должно быть меньше 42
-    del std_one.age # AttributeError: Свойство "_age" нельзя удалять
+    # std_one.grade = 11.0 # TypeError: Значение 11.0 должно быть целым числом
+    # std_one.office = 73 # ValueError: Значение 73 должно быть меньше 42
+    # del std_one.age # AttributeError: Свойство "_age" нельзя удалять
     print(f'{std_one.__dict__ = }')
