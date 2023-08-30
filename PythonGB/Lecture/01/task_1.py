@@ -11,7 +11,7 @@
 #
 # res = input('Print your text: ')
 # print('Ты написал ', res)
-#
+
 # ADULT = 18
 # age = int(input('сколько тебе лет: '))
 # how_old = ADULT - age
