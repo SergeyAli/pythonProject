@@ -4,4 +4,9 @@
 📌 Возвращается строка в нижнем регистре.
 '''
 
-
+import re
+def delsymbol(text: str):
+    regex = re.compile('[^a-zA-Z ]')
+    return regex.sub('',text).lower()
+if __name__ == '__main__':
+    print(delsymbol('Give me! a cup of wa&ter!'))
